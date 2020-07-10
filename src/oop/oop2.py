@@ -3,11 +3,11 @@
 # Also change it so the num_wheels defaults to 4 if not specified when the
 # object is constructed.
 
-class GroundVehicle():
+class GroundVehicle:
     def __init__(self, num_wheels=4):
         self.num_wheels = num_wheels
 
-    def drive():
+    def drive(self):
         return 'vroooom'
 
 
@@ -36,5 +36,4 @@ vehicles = [
 # Go through the vehicles list and print the result of calling drive() on each.
 
 for i in vehicles:
-    sound = i.drive()
-    print(f'{sound}')
+    print(i.drive())
