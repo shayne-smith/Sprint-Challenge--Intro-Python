@@ -1,4 +1,6 @@
 import csv # CSV module handles working with CSV files
+import sys # sys module to work with system-specific variables
+import math # math module
 
 # Create a class to hold a city location. Call the class "City". It should have
 # fields for name, lat and lon (representing latitude and longitude).
@@ -40,9 +42,8 @@ def cityreader(cities=[]):
 cityreader(cities)
 
 # Print the list of cities (name, lat, lon), 1 record per line.
-# for c in cities:
-#     print(c)
-# print(cities.lat)
+for c in cities:
+    print(c)
 
 # STRETCH GOAL!
 #
@@ -61,8 +62,8 @@ cityreader(cities)
 #
 # Example I/O:
 #
-# Enter lat1,lon1: 45,-100
-# Enter lat2,lon2: 32,-120
+# Enter lat1,lon1: 45,-120 # top-left
+# Enter lat2,lon2: 32,-100 # bottom-right
 # Albuquerque: (35.1055,-106.6476)
 # Riverside: (33.9382,-117.3949)
 # San Diego: (32.8312,-117.1225)
@@ -74,6 +75,8 @@ cityreader(cities)
 # Salt Lake City: (40.7774,-111.9301)
 
 # TODO Get latitude and longitude values from the user
+# location1 = input('Enter lat1, lon1: ') # bottom-left corner
+# location2 = input('Enter lat2, lon2: ') # top-right corner
 
 def cityreader_stretch(lat1, lon1, lat2, lon2, cities=[]):
   # within will hold the cities that fall within the specified region
@@ -82,5 +85,25 @@ def cityreader_stretch(lat1, lon1, lat2, lon2, cities=[]):
   # TODO Ensure that the lat and lon valuse are all floats
   # Go through each city and check to see if it falls within 
   # the specified coordinates.
+  if (lat1, lat2, lon1, lon2) is float:
+      for city in cities:
+          if math.abs(lat1 - lat2) <= 90 and math.abs(lon1 - lon2) <= 180
+              if lat1 > lat2 and lon1 > lon2:
+                  # lat1 north
+                  # lat2 south
+                  # lon1 east
+                  # lon2 west
+              elif lat1 > lat2 and lon1 < lon2
+                  # lat1 north
+                  # lat2 south
+                  # lon1 west
+                  # lon2 east
+              elif lat1 < lat2 and lon1 > lon2:
+                  # lat1 south
+                  # lat2 north
+                  # lon1 east
+                  # lon2 west
+              elif lat1 < lat2
+                  
 
   return within
